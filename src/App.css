@@ -1,0 +1,19 @@
+ul {
+    list-style-type: none;
+}
+
+.side-form-container {
+    width: 300px;
+    /* Adjust width as needed */
+    margin-left: 20px;
+    /* Adjust margin as needed */
+}
+
+.cDetailsTitle {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.deleteButton {
+    padding-bottom: 30px;
+}
