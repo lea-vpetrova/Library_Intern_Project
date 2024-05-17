@@ -1,3 +1,52 @@
 .custom-navbar-background {
     background-color: lightpink;
 }
+.app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+    padding: 20px;
+}
+
+.books-list-container {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.edit-add-book-container {
+    width: 300px;
+    /* Adjust width as needed */
+}
+
+.sidebar-container {
+    background-color: #f8f9fa;
+    /* Adjust background color as needed */
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.content-details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* Adjust gap as needed */
+}
+
+.cDetailsTitle {
+    margin-bottom: 20px;
+    /* Adjust margin as needed */
+}
+
+.cDetailsTitle h2 {
+    margin: 0;
+}
+
+.button {
+    cursor: pointer;
+}

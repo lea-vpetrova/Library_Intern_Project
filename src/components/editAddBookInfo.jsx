@@ -23,57 +23,60 @@ export const EditAddBookInfo = ({ onBookCreated, selectedBook }) => {
   }, [selectedBook]);
 
   return (
-    <div className="side-form-container">
-    <form
-      className="content-details"
-      style={{ display: "flex", flexDirection: "column", gap: 5 }}
-      ref={formRef}
-      onSubmit={(e) => {
-        e.preventDefault();
-        const data = Object.fromEntries(new FormData(e.target).entries());
-        onBookCreated?.({
-          ...data,
-          publicationDate: new Date(data.publicationDate),
-        });
-        formRef.current?.reset();
-      }}
-    >
-      <div className="cDetailsTitle">
-        <h2><strong>Content details</strong></h2>
-      </div>
-      <label>Title</label>
-      <input id="field1" name="title" required />
+    <div className="sidebar-container">
+      <form
+        className="content-details"
+        style={{ display: "flex", flexDirection: "column", gap: 5 }}
+        ref={formRef}
+        onSubmit={(e) => {
+          e.preventDefault();
+          const data = Object.fromEntries(new FormData(e.target).entries());
+          onBookCreated?.({
+            ...data,
+            publicationDate: new Date(data.publicationDate),
+          });
+          formRef.current?.reset();
+        }}
+      >
+        <div className="cDetailsTitle">
+          <h2><strong>Content details</strong></h2>
+        </div>
+        <label>Title</label>
+        <input id="field1" name="title" required />
 
-      <label>Author</label>
-      <input id="field2" name="author" required />
+        <label>Author</label>
+        <input id="field2" name="author" required />
 
-      <label>Isbn</label>
-      <input id="field3" name="isbn" required />
+        <label>Isbn</label>
+        <input id="field3" name="isbn" required />
 
-      <label>Price</label>
-      <input id="field4" name="price" type="decimal" required />
+        <label>Price</label>
+        <input id="field4" name="price" type="decimal" required />
 
-      <label>Publication Date</label>
-      <input id="field5" name="publicationDate" type="date" required />
+        <label>Publication Date</label>
+        <input id="field5" name="publicationDate" type="date" required />
 
-      <div>
-        <button
-          id="saveButton"
-          className="button is-dark"
-          type="submit">
-          Save
-        </button>
-        <button
-          id="clearButton"
-          className="button is-link"
-          type="reset"
-          onClick={() => formRef.current?.reset()}
-          style={{ marginLeft: '10px' }}
-        >
-          Clear
-        </button>
-      </div>
-    </form>
+        <label>Image</label>
+        <input id="imageUrl" name="imageUrl" type="url" />
+
+        <div>
+          <button
+            id="saveButton"
+            className="button is-dark"
+            type="submit">
+            Save
+          </button>
+          <button
+            id="clearButton"
+            className="button is-link"
+            type="reset"
+            onClick={() => formRef.current?.reset()}
+            style={{ marginLeft: '10px' }}
+          >
+            Clear
+          </button>
+        </div>
+      </form>
     </div>
   );
 };
